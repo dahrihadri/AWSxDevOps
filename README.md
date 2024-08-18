@@ -26,7 +26,22 @@ Welcome to this DevOps project! In this guide, I'll share how to host a static w
 - An [AWS account](https://aws.amazon.com/free/) (Free Tier eligible)
 - Basic knowledge of HTML
 
-## Deleting Resources
+## What is DevOps?
+In the real world, developers are often working in teams and collaborating on complex software projects. Managing the many changes can get messy without the right systems in place.
+
+**DevOps engineers** work to bridge the gap between developers (Dev), who build the software, and operations (Ops), who deploy and manage it. On a day to day basis, DevOps engineers work on automating and optimizing processes in all stages of making software, from integration, testing, releasing to deployment. Essentially, they make building software faster, less error-prone, and more secure.
+
+## What is a CI/CD pipeline?
+
+A CI/CD pipeline is a tool that automates the process software goes through from development (i.e. being coded up by engineers) to deployment (i.e. made available to users).
+  - **"CI" stands for continuous integration**, where code changes are automatically updated and integrated into what other developers are working on.
+  - **"CD" stands for continuous deployment**, which automates releasing new software to actual users.
+Teams use CI/CD to make their workflow smoother and to cut down on manual tasks, which helps them deliver new features to users, fix bugs much quicker and work with less chance of errors.
+
+CI/CD is a KEY concept in the world of DevOps. Improving software delivery speed and quality using automation and streamlined workflows is what DevOps is all about!
+
+
+## Delete Your Resources
 
 To avoid unnecessary charges, make sure to delete all AWS resources after completing the project:
 
@@ -38,7 +53,6 @@ To avoid unnecessary charges, make sure to delete all AWS resources after comple
 6. Delete the `IAM Roles & Policies`.
 7. Delete the `CloudWatch Log Group`.
 8. Delete the `EC2 Instances`.
-
 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
