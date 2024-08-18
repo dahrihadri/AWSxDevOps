@@ -12,7 +12,7 @@ Welcome to this DevOps project! In this guide, I'll share how to host a static w
 
 - [Prerequisites](#prerequisites)
 - Series:
-  - [Series I: Setting Up a Web App and IDE with Cloud9](series-i/readme.md)
+  - [Series I: Setting Up a Web App and IDE with Cloud9](https://github.com/dahrihadri/AWSxDevOps/blob/main/README.md)
   - [Series II: Setting Up A Git Repository with AWS CodeCommit](Series-II/readme.md)
   - [Series III: Secure Project Dependencies with AWS CodeArtifact](Series-III/readme.md)
   - [Series IV: Package an App with CodeBuild](Series-IV/readme.md)
