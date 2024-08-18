@@ -140,4 +140,4 @@ Let's Connect and Feel free to reach out or follow me in [LinkedIn](https://www.
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# Lets continue our AWSXDevOps project in [Series II](AWSxDevOps/Series-II/README.md)! 🌟
+# Lets continue our AWSXDevOps project in [Series II](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-II) ! 🌟
