@@ -1,7 +1,7 @@
 # AWSxDevOps
 Welcome to this AWSxDevOps project series! In this SEVEN-project series, I will create a CI/CD pipeline to build and deploy a simple web application using AWS' Code services.
 
-## Here's what you'll build at the end of ALL seven projects:
+## Here's what I'll build at the end of ALL seven projects:
 
 Welcome to this DevOps project! In this guide, I'll share how to host a static website using Amazon S3, a highly scalable storage service provided by AWS. By the end of this project, I'll have my website hosted and publicly accessible on the web.
 
