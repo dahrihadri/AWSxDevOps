@@ -3,89 +3,43 @@ Welcome to this AWSxDevOps project series! In this SEVEN-project series, I will 
 
 ## Here's what you'll build at the end of ALL seven projects:
 
-Welcome to this DevOps project! In this guide, you'll learn how to host a static website using Amazon S3, a highly scalable storage service provided by AWS. By the end of this project, you'll have your own website hosted and publicly accessible on the web.
+Welcome to this DevOps project! In this guide, I'll share how to host a static website using Amazon S3, a highly scalable storage service provided by AWS. By the end of this project, I'll have my website hosted and publicly accessible on the web.
 
-![Project Screenshot](assets/screenshots/s3-website.png)
+![complete-architecture](Series-I/assets/screenshots/complete-architecture.png)
+## Yup. I'll build all of this from scratch - and we'll do every step together
 
-## ⚡️ 30 Second Summary
+## Table of Contents
 
-**Difficulty**: Easy peasy  
-**Time**: 45 min  
-**Cost**: $0  
-**Tools Needed**:
-- An AWS account - [Create one here!](https://aws.amazon.com/free/)
+- [Prerequisites](#prerequisites)
+- Series:
+  - [Series I: Setting Up a Web App and IDE with Cloud9](Series-I/readme.md)
+  - [Series II: Setting Up A Git Repository with AWS CodeCommit](Series-II/readme.md)
+  - [Series III: Secure Project Dependencies with AWS CodeArtifact](Series-III/readme.md)
+  - [Series IV: Package an App with CodeBuild](Series-IV/readme.md)
+  - [Series V: Deploy an App with AWS CodeDeploy](Series-V/readme.md)
+  - [Series VI: Automate with CloudFormation](Series-VI/readme.md)
+  - [Series VII: CI/CD with CodePipeline](Series-VII/readme.md)
+- [License](LICENSE)
 
-## AWS Services Used
+## Prerequisites
 
-- Amazon S3
-
-## What You'll Achieve
-
-- Create an Amazon S3 bucket.
-- Upload website content to the S3 bucket.
-- Configure S3 to host a static website.
-- Make the website publicly accessible.
-
-## How It Works
-
-1. **Create a Bucket**: Set up an S3 bucket where you'll store your website files.
-2. **Upload Content**: Upload your website's HTML files and assets to the bucket.
-3. **Configure Static Website Hosting**: Set up your S3 bucket to serve as a static website host.
-4. **Make Public**: Configure your bucket's permissions to make the website publicly accessible.
-
-## Project Steps
-
-### Step 1: Create a Bucket in Amazon S3
-
-1. Sign in to the AWS Management Console and navigate to Amazon S3.
-2. Click **Create bucket**.
-3. Choose a region and enter a globally unique name for your bucket.
-4. Enable ACLs (Access Control Lists) to manage permissions.
-5. Disable **Block all public access** and confirm the warning.
-
-   ![Bucket Creation](assets/screenshots/bucket-creation.png)
-
-6. Click **Create bucket** to complete the setup.
-
-### Step 2: Upload Website Content
-
-1. Open your new bucket in the S3 console.
-2. Click **Upload** and select your website files (`index.html` and other assets).
-3. Upload the files and confirm the successful upload.
-
-   ![Upload Content](assets/screenshots/upload-content.png)
-
-### Step 3: Configure Static Website Hosting
-
-1. In your S3 bucket, go to the **Properties** tab.
-2. Scroll to the **Static website hosting** section and select **Use this bucket to host a website**.
-3. Enter `index.html` as the index document.
-
-   ![Website Hosting](assets/screenshots/website-hosting.png)
-
-4. Save changes and note the bucket website endpoint URL.
-
-### Step 4: Make the Website Public
-
-1. Go back to the **Permissions** tab in your bucket settings.
-2. Use ACLs to set the permissions of your files to public.
-
-   ![Make Public](assets/screenshots/make-public.png)
-
-3. Refresh the website endpoint URL to see your live site.
+- An [AWS account](https://aws.amazon.com/free/) (Free Tier eligible)
+- Basic knowledge of HTML
 
 ## Deleting Resources
 
 To avoid unnecessary charges, make sure to delete all AWS resources after completing the project:
 
-1. Delete the objects in your bucket.
-2. Delete the bucket itself.
+1. Delete the `Cloud9 environment`.
+2. Delete the `CloudFormation stack`.
+3. Delete the `CodePipeline`.
+4. Delete the `CodeDeploy application`.
+5. Delete the `S3 bucket`.
+6. Delete the `IAM Roles & Policies`.
+7. Delete the `CloudWatch Log Group`.
+8. Delete the `EC2 Instances`.
 
-## Share Your Work
 
-Share your project on LinkedIn to showcase your achievement! You can use the downloadable documentation as proof of your work.
-
-## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
