@@ -12,13 +12,13 @@ Welcome to this DevOps project! In this guide, I'll share how to host a static w
 
 - [Prerequisites](#prerequisites)
 - Series:
-  - [Series I: Setting Up a Web App and IDE with Cloud9](https://github.com/dahrihadri/AWSxDevOps/blob/main/README.md)
-  - [Series II: Setting Up A Git Repository with AWS CodeCommit](Series-II/readme.md)
-  - [Series III: Secure Project Dependencies with AWS CodeArtifact](Series-III/readme.md)
-  - [Series IV: Package an App with CodeBuild](Series-IV/readme.md)
-  - [Series V: Deploy an App with AWS CodeDeploy](Series-V/readme.md)
-  - [Series VI: Automate with CloudFormation](Series-VI/readme.md)
-  - [Series VII: CI/CD with CodePipeline](Series-VII/readme.md)
+  - [Series I: Setting Up a Web App and IDE with Cloud9](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-I)
+  - [Series II: Setting Up A Git Repository with AWS CodeCommit](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-II)
+  - [Series III: Secure Project Dependencies with AWS CodeArtifact](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-III)
+  - [Series IV: Package an App with CodeBuild](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-IV)
+  - [Series V: Deploy an App with AWS CodeDeploy](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-V)
+  - [Series VI: Automate with CloudFormation](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-VI)
+  - [Series VII: CI/CD with CodePipeline](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-VII)
 - [License](LICENSE)
 
 ## Prerequisites
