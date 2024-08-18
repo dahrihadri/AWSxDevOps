@@ -1,96 +1,143 @@
-# AWSxDevOps
-Welcome to this AWSxDevOps project series! In this SEVEN-project series, I will create a CI/CD pipeline to build and deploy a simple web application using AWS' Code services.
+# AWSxDevOps Series I - Setting Up a Web App and IDE with Cloud9
+In the first project of this series, I will share the basics of building a web app and IDE using Cloud9. This will lay the foundations for my DevOps work across the next six projects!
 
-## Here's what you'll build at the end of ALL seven projects:
+![s1-architecture](assets/screenshots/s1-architecture.png)
 
-Welcome to this DevOps project! In this guide, you'll learn how to host a static website using Amazon S3, a highly scalable storage service provided by AWS. By the end of this project, you'll have your own website hosted and publicly accessible on the web.
+## Introducing AWS Cloud9!
 
-![Project Screenshot](assets/screenshots/s3-website.png)
+### What it does & how it’s useful
+AWS Cloud9 is a cloud-based IDE that lets you write, run, and debug code with just a browser. Developers and teams use AWS Cloud9 because it includes essential tools, supports collaboration, and eliminates the need for local setups.
 
-## ⚡️ 30 Second Summary
+### How I’m using it in today’s project
+I’m using AWS Cloud9 to set up an IDE for developing a web application. It streamlines my workflow by providing a browser-based environment with all necessary tools pre-installed.
+
+### This project took me
+This project took me about 30 minutes to complete. Documentation took me an additional 30 minutes. Keeping track of everything in detail was crucial for understanding and replicating the process.
 
 **Difficulty**: Easy peasy  
-**Time**: 45 min  
+**Time**: 1 hour  
 **Cost**: $0  
 **Tools Needed**:
 - An AWS account - [Create one here!](https://aws.amazon.com/free/)
 
 ## AWS Services Used
 
-- Amazon S3
+- Amazon Cloud9
+- Amazon IAM
+- Amazon EC2
 
-## What You'll Achieve
+## What I'll share in this first project series:
 
-- Create an Amazon S3 bucket.
-- Upload website content to the S3 bucket.
-- Configure S3 to host a static website.
-- Make the website publicly accessible.
+   - 💂 `Set up an IAM user`: How I created a new IAM user with admin permissions to provide a safer alternative to using the AWS root account for ongoing projects. 
+   - ☁️ `Launch a new Cloud9 IDE`: How I set up a new Cloud9 IDE environment to write, run, and debug code without installing heavy software locally. 
+   - ⬇️ `Install Maven & Java`: How I installed Apache Maven and Amazon Corretto 8 on my Cloud9 IDE to manage my project's dependencies for developing a Java web application. 
+   - 🏗️ `Create the application`: Using Maven, how I generated a new Java web app from a template, creating a basic project structure and environment for further development. 
 
-## How It Works
+## Table of Contents
 
-1. **Create a Bucket**: Set up an S3 bucket where you'll store your website files.
-2. **Upload Content**: Upload your website's HTML files and assets to the bucket.
-3. **Configure Static Website Hosting**: Set up your S3 bucket to serve as a static website host.
-4. **Make Public**: Configure your bucket's permissions to make the website publicly accessible.
+- [Prerequisites](#prerequisites)
+- [Steps](#steps)
+  - [Step 1: Set up an IAM User](#step-1-set-up-an-iam-user)
+  - [Step 2: Launch a Cloud9 IDE](#step-2-launch-a-cloud9-ide)
+  - [Step 3: Install Maven & Java](#step-3-install-maven-and-java)
+  - [Step 4: Create the application](#step-4-create-the-application)
+- [My key learning](#my-key-learning)
+- [License](#license)
 
-## Project Steps
+## Prerequisites
 
-### Step 1: Create a Bucket in Amazon S3
+- An [AWS account](https://aws.amazon.com/free/) (Free Tier eligible)
+- Basic knowledge of HTML
 
-1. Sign in to the AWS Management Console and navigate to Amazon S3.
-2. Click **Create bucket**.
-3. Choose a region and enter a globally unique name for your bucket.
-4. Enable ACLs (Access Control Lists) to manage permissions.
-5. Disable **Block all public access** and confirm the warning.
+## Steps
 
-   ![Bucket Creation](assets/screenshots/bucket-creation.png)
+### Step 1: Set up an IAM User
 
-6. Click **Create bucket** to complete the setup.
+- An `IAM user` is an additional user that can access AWS resources with permissions specified by the account owner. 
+- It’s important to create `IAM users` because the root user is vulnerable to security breaches, and `IAM users` allow for controlled access to resources.
+- I created an `IAM user` with administrator access, allowing it to perform all actions on all resources in my account.
 
-### Step 2: Upload Website Content
+<p align="center">A new IAM user set up for my AWS Account</p>
 
-1. Open your new bucket in the S3 console.
-2. Click **Upload** and select your website files (`index.html` and other assets).
-3. Upload the files and confirm the successful upload.
+![set up for my AWS Account](assets/screenshots/set-up-for-my-AWS-Account.png)
 
-   ![Upload Content](assets/screenshots/upload-content.png)
 
-### Step 3: Configure Static Website Hosting
+### Step 2: Launch a Cloud9 IDE
 
-1. In your S3 bucket, go to the **Properties** tab.
-2. Scroll to the **Static website hosting** section and select **Use this bucket to host a website**.
-3. Enter `index.html` as the index document.
+- An IDE is a software tool that helps developers write, test, and debug code efficiently in a single integrated environment.
+- I used `AWS Cloud9` to launch an environment. An environment means a configured setup that provides the necessary tools and settings for software development.
+- Using `Cloud9` meant having a flexible and accessible IDE hosted on AWS, eliminating the need for local installations and ensuring consistent development environments.
 
-   ![Website Hosting](assets/screenshots/website-hosting.png)
+<p align="center">My Cloud9 IDE!</p> 
 
-4. Save changes and note the bucket website endpoint URL.
+   ![My Cloud9 IDE](assets/screenshots/My-Cloud9-IDE.png)
 
-### Step 4: Make the Website Public
+### Step 3: Install Maven and Java
 
-1. Go back to the **Permissions** tab in your bucket settings.
-2. Use ACLs to set the permissions of your files to public.
+- `Maven` is a powerful build automation tool used primarily for `Java` projects to manage dependencies, build processes, and project lifecycles efficiently. 
+- `Maven` is required in this project because it automates tasks like compiling, testing, and packaging Java applications, ensuring smooth and standardized project builds.
+- I run these commands
+```bash
+sudo wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
 
-   ![Make Public](assets/screenshots/make-public.png)
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+‍
+sudo yum install -y apache-maven
+```
+  
+- `Java` is a widely used programming language known for its portability, reliability, and scalability, making it suitable for various applications and environments. 
+- `Java` is required in this project because it serves as the foundational programming language for building and running the Java-based web application using AWS services. 
+- The `Java` version I’m using for this project is `version 1.8.0` 
+- I run these commands
+```bash
+sudo amazon-linux-extras enable corretto8
 
-3. Refresh the website endpoint URL to see your live site.
+sudo yum install -y java-1.8.0-amazon-corretto-devel
 
-## Deleting Resources
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto.x86_64
 
-To avoid unnecessary charges, make sure to delete all AWS resources after completing the project:
+export PATH=/usr/lib/jvm/java-1.8.0-amazon-corretto.x86_64/jre/bin/:$PATH
+```
 
-1. Delete the objects in your bucket.
-2. Delete the bucket itself.
+<p align="center">I used terminal commands to install Maven and Java</p> 
 
-## Share Your Work
+   ![My Cloud9 IDE](assets/screenshots/Maven-and-Java.png)
 
-Share your project on LinkedIn to showcase your achievement! You can use the downloadable documentation as proof of your work.
+
+### Step 4: Create the application
+
+- To create a simple Java web app, I ran the command mvn `archetype:generate` `-DgroupId=com.nextwork.app` `-DartifactId=nextwork-web-project` `-DarchetypeArtifactId=mavenarchetype-webapp` `-DinteractiveMode=false`. 
+```bash
+mvn archetype:generate \
+   -DgroupId=com.nextwork.app \
+   -DartifactId=nextwork-web-project \
+   -DarchetypeArtifactId=maven-archetype-webapp \
+   -DinteractiveMode=false
+```
+- Once the web app was created, my IDE's file explorer showed a new directory named `nextwork-web-project`, containing the initial structure of the Maven-based web application.
+- To customize this web app's display, I will edit the `index.jsp` file in my project, which contains the markup for the web page.
+
+<p align="center">Writing a basic web app in my Cloud9 IDE!</p> 
+
+   ![my-index-html](assets/screenshots/my-index-html.png)
+
+### My key learning
+
+1. It’s recommended to use an IAM user instead of the root user for projects because IAM users offer scoped permissions, reducing the risk of unauthorized access and potential security breaches to critical AWS resources. 
+2. IDEs are useful for developers as they provide integrated tools for coding, debugging, and managing software projects efficiently in a unified environment, enhancing productivity and collaboration.
+3. Apache Maven is used in my project to automate the build process, manage dependencies, and streamline project management tasks, ensuring efficient development and deployment of Java-based applications.
+4. One thing I didn’t expect was the depth of customization and automation capabilities that AWS Cloud9 offers, enhancing my development workflow significantly. 
+
+## Great! 
+### We are done with series I
+
+   ![s1-architecture](assets/screenshots/s1-architecture.png)
+
+## Find this helpful?
+Let's Connect and Feel free to reach out or follow me in [LinkedIn](https://www.linkedin.com/in/dahrihadri) for more updates on my journey through AWS and DevOps!
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Let's Connect
-
-Feel free to reach out or follow me for more updates on my journey through AWS and DevOps!
-
-**Happy Hosting!** 🌟
+# Lets continue our AWSXDevOps project in [Series II](AWSxDevOps/Series-II/README.md)! 🌟
