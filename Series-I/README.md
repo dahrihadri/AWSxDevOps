@@ -116,7 +116,19 @@ mvn archetype:generate \
 ```
 - Once the web app was created, my IDE's file explorer showed a new directory named `nextwork-web-project`, containing the initial structure of the Maven-based web application.
 - To customize this web app's display, I will edit the `index.jsp` file in my project, which contains the markup for the web page.
+```bash
+<html>
 
+<body>
+
+<h2>Hello <YOUR NAME>!</h2>
+
+<p>This is my NextWork web application working!</p>
+
+</body>
+
+</html>
+```
 <p align="center">Writing a basic web app in my Cloud9 IDE!</p> 
 
    ![my-index-html](assets/screenshots/my-index-html.png)
