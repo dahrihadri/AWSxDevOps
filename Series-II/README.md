@@ -40,10 +40,9 @@ This project took me about 20 minutes to complete, including setup, coding, and 
 
 - [Prerequisites](#prerequisites)
 - [Steps](#steps)
-  - [Step 1: Set up an IAM User](#step-1-set-up-an-iam-user)
-  - [Step 2: Launch a Cloud9 IDE](#step-2-launch-a-cloud9-ide)
-  - [Step 3: Install Maven & Java](#step-3-install-maven-and-java)
-  - [Step 4: Create the application](#step-4-create-the-application)
+  - [Step 1: Create a Git repository](#step-1-create-a-git-repository)
+  - [Step 2: My first commit](#step-2-my-first-commit)
+  - [Step 3: Git Action](#step-3-git-action)
 - [My key learning](#my-key-learning)
 - [License](#license)
 
@@ -110,4 +109,4 @@ Let's Connect and Feel free to reach out or follow me in [LinkedIn](https://www.
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# Lets continue our AWSXDevOps project in [Series II](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-III) ! 🌟
+# Lets continue our AWSXDevOps project in [Series III](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-III) ! 🌟
