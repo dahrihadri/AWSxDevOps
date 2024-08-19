@@ -1,96 +1,113 @@
-# AWSxDevOps
-Welcome to this AWSxDevOps project series! In this SEVEN-project series, I will create a CI/CD pipeline to build and deploy a simple web application using AWS' Code services.
+# AWSxDevOps Series II - Setting Up A Git Repository with AWS CodeCommit
+Now onto Project TWO of the series, where I will share how to store my web application's source code in a repository. Now that I have some Java source code locally, let's store the source code in a Git repository.
 
-## Here's what you'll build at the end of ALL seven projects:
+![s1-architecture](assets/screenshots/s1-architecture.png)
 
-Welcome to this DevOps project! In this guide, you'll learn how to host a static website using Amazon S3, a highly scalable storage service provided by AWS. By the end of this project, you'll have your own website hosted and publicly accessible on the web.
+## Introducing AWS CodeCommit!
 
-![Project Screenshot](assets/screenshots/s3-website.png)
+### What it does & how it’s useful
+AWS Cloud9 is a cloud-based IDE that lets you write, run, and debug code with just a browser. 
+Developers and teams use AWS CodeCommit because It integrates seamlessly with other AWS services, supports collaboration, and ensures code security and version control. 
 
-## ⚡️ 30 Second Summary
+### How I’m using it in today’s project
+I’m using AWS CodeCommit to store, manage, and track changes to my project's source code. It helps ensure version control, allows for collaboration, and integrates seamlessly with other AWS services for a smooth CI/CD pipeline. 
+
+### This project took me
+This project took me about 20 minutes to complete, including setup, coding, and testing. Documentation took me around 30 minutes to write, ensuring detailed and clear instructions for each step. 
 
 **Difficulty**: Easy peasy  
-**Time**: 45 min  
+**Time**: 50 mins  
 **Cost**: $0  
 **Tools Needed**:
 - An AWS account - [Create one here!](https://aws.amazon.com/free/)
 
 ## AWS Services Used
 
-- Amazon S3
+- AWS Cloud9
+- AWS IAM
+- AWS EC2
+- AWS CodeCommit
 
-## What You'll Achieve
+## What I'll share in this second project series:
 
-- Create an Amazon S3 bucket.
-- Upload website content to the S3 bucket.
-- Configure S3 to host a static website.
-- Make the website publicly accessible.
+   - ⚙️ `Set up a CodeCommit Repository`: I created a new repository in AWS CodeCommit to securely store and manage the source code for my Java web app.
+   - ☁️ `Configure Git in Cloud9`: I established my Git identity with my username and email, so my changes to the repository are properly attributed to me.
+   - 📂 `Initialize and Configure Your Local Repository`: In the Cloud9 environment, I initialized a new Git repository. I set up your CodeCommit repository as the remote origin, preparing the path to    synchronize my local and remote repositories.
+   - 🫸 `Make Your First Commit and Push`: I added all my files to the staging area, committed them with a message marking the "Initial commit", and pushed these changes to the main branch of my CodeCommit repository, making my code available in the cloud.
+   - 🗂️ `Understand and Organize Your Project Structure`: I've learned about the essential files in my repository, such as the src directory for my source code, and the pom.xml file for managing my Maven project's dependencies and settings. 
 
-## How It Works
+## Table of Contents
 
-1. **Create a Bucket**: Set up an S3 bucket where you'll store your website files.
-2. **Upload Content**: Upload your website's HTML files and assets to the bucket.
-3. **Configure Static Website Hosting**: Set up your S3 bucket to serve as a static website host.
-4. **Make Public**: Configure your bucket's permissions to make the website publicly accessible.
+- [Prerequisites](#prerequisites)
+- [Steps](#steps)
+  - [Step 1: Set up an IAM User](#step-1-set-up-an-iam-user)
+  - [Step 2: Launch a Cloud9 IDE](#step-2-launch-a-cloud9-ide)
+  - [Step 3: Install Maven & Java](#step-3-install-maven-and-java)
+  - [Step 4: Create the application](#step-4-create-the-application)
+- [My key learning](#my-key-learning)
+- [License](#license)
 
-## Project Steps
+## Prerequisites
 
-### Step 1: Create a Bucket in Amazon S3
+- An [AWS account](https://aws.amazon.com/free/) (Free Tier eligible)
+- Basic knowledge of HTML
 
-1. Sign in to the AWS Management Console and navigate to Amazon S3.
-2. Click **Create bucket**.
-3. Choose a region and enter a globally unique name for your bucket.
-4. Enable ACLs (Access Control Lists) to manage permissions.
-5. Disable **Block all public access** and confirm the warning.
+## Steps
 
-   ![Bucket Creation](assets/screenshots/bucket-creation.png)
+### Step 1: Create a Git repository
 
-6. Click **Create bucket** to complete the setup.
+- Git is a distributed version control system that tracks changes in source code during software development.
+- A Git repository is a storage space where your project's source code and its revision history are kept, enabling version control and collaboration among developers.
+- To create a Git repository in the cloud, I used AWS CodeCommit, a secure and scalable source control service.
 
-### Step 2: Upload Website Content
+<p align="center">My setup page for a CodeCommit repo</p>
 
-1. Open your new bucket in the S3 console.
-2. Click **Upload** and select your website files (`index.html` and other assets).
-3. Upload the files and confirm the successful upload.
+![set up for my AWS Account](assets/screenshots/set-up-for-my-AWS-Account.png)
 
-   ![Upload Content](assets/screenshots/upload-content.png)
 
-### Step 3: Configure Static Website Hosting
+### Step 2: My first commit
 
-1. In your S3 bucket, go to the **Properties** tab.
-2. Scroll to the **Static website hosting** section and select **Use this bucket to host a website**.
-3. Enter `index.html` as the index document.
+- I initialized a Git repo in my web application by running the command git init -b main in my Cloud9 IDE.
+- To commit and push my code, I will have to run three different commands in order:
+   - `git add .` - This adds all changed files to the staging area.
+   - `git commit -m "Initial commit"` - This commits the changes with a message.
+   - `git push -u origin main` - This pushes the commits to the remote repository.
 
-   ![Website Hosting](assets/screenshots/website-hosting.png)
+<p align="center">File I committed showing up in my CodeCommit repo!</p> 
 
-4. Save changes and note the bucket website endpoint URL.
+   ![My Cloud9 IDE](assets/screenshots/My-Cloud9-IDE.png)
 
-### Step 4: Make the Website Public
+### Step 3: Git Action
 
-1. Go back to the **Permissions** tab in your bucket settings.
-2. Use ACLs to set the permissions of your files to public.
+- I wanted to see Git working in action, so I changed the index.jsp file in Cloud9 by adding a new line of text.
+- Then I tried seeing these changes in my CodeCommit repository, but this didn’t work because I hadn't pushed my changes from my local Git repository in Cloud9 to the remote CodeCommit repository.
+- I finally saw the changes in my CodeCommit repository after running git push in my Cloud9 terminal to push my committed changes to the remote origin (CodeCommit repository).
 
-   ![Make Public](assets/screenshots/make-public.png)
+<p align="center">My updated index.jsp file showing up in CodeCommit!</p> 
 
-3. Refresh the website endpoint URL to see your live site.
+   ![My Cloud9 IDE](assets/screenshots/Maven-and-Java.png)
 
-## Deleting Resources
 
-To avoid unnecessary charges, make sure to delete all AWS resources after completing the project:
+### My key learning
 
-1. Delete the objects in your bucket.
-2. Delete the bucket itself.
+1. Git is a DevOps tool used for source code management. It's a free and open-source version control system designed to handle projects of all sizes efficiently. Git tracks changes in source code, facilitating collaboration among multiple developers.
+2. A local repository refers to a copy of a Git repository that resides on your computer. It allows you to work on your project locally, making changes and staging them before pushing them to a remote repository like AWS CodeCommit.
+3. To commit your code in Git, you typically run these three key commands
+     - `git add .` - This command stages all changes in your working directory for the next commit.
+     - `git commit -m "Your commit message"` - This command records the changes staged in the previous step to your local repository.
+     - `git push` - This command uploads the changes from your local repository to the remote repository
+4. One thing I didn’t expect was the seamless integration between AWS CodeCommit and Cloud9, which simplified my workflow for version control and development. 
 
-## Share Your Work
+## Great! 
+### We are done with series II
 
-Share your project on LinkedIn to showcase your achievement! You can use the downloadable documentation as proof of your work.
+   ![s1-architecture](assets/screenshots/s1-architecture.png)
+
+## Find this helpful?
+Let's Connect and Feel free to reach out or follow me in [LinkedIn](https://www.linkedin.com/in/dahrihadri) for more updates on my journey through AWS and DevOps!
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Let's Connect
-
-Feel free to reach out or follow me for more updates on my journey through AWS and DevOps!
-
-**Happy Hosting!** 🌟
+# Lets continue our AWSXDevOps project in [Series II](https://github.com/dahrihadri/AWSxDevOps/tree/main/Series-III) ! 🌟
